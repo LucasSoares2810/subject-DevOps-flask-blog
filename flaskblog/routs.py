@@ -1,7 +1,7 @@
 import os
 import secrets
 from PIL import Image
-from flask import render_template, url_for, flash, redirect, request,abort
+from flask import render_template, url_for, flash, redirect, request, abort
 from flaskblog.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from flaskblog import app, db, bcrypt
 from flaskblog.models import User, Post
@@ -127,5 +127,3 @@ def update_post(post_id):
         form.title.data = post.title
         form.content.data = post.content
     return render_template('create_post.html', title='Update Post', form=form, legend='Update Post')
-
-
